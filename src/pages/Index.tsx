@@ -104,6 +104,40 @@ export default function Index() {
         >
           30 апреля 2026 года
         </p>
+        {/* CHILDHOOD PHOTOS */}
+        <div
+          className="opacity-0 animate-fade-up mb-10"
+          style={{ animationDelay: "0.65s" }}
+        >
+          <div className="flex items-end justify-center gap-6 md:gap-10">
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-36 h-44 md:w-44 md:h-56 overflow-hidden border-4 border-[#faf8f5] shadow-lg rotate-[-3deg]" style={{filter: "sepia(0.15)"}}>
+                <img
+                  src="https://cdn.poehali.dev/projects/7f2085e4-baa1-4240-a858-865bf7b9179c/bucket/ed7cb605-34c9-4d16-8908-7847627e93d4.jpg"
+                  alt="Дмитрий в детстве"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span className="text-xs tracking-widest uppercase text-[#8a7560]">Дмитрий</span>
+            </div>
+            <div className="flex flex-col items-center gap-2 mb-6">
+              <p className="font-display italic text-lg md:text-xl text-[#8a7560] leading-snug max-w-[140px]">
+                Прошли годы,<br/>а они всё те же...
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-36 h-44 md:w-44 md:h-56 overflow-hidden border-4 border-[#faf8f5] shadow-lg rotate-[3deg]" style={{filter: "sepia(0.15)"}}>
+                <img
+                  src="https://cdn.poehali.dev/projects/7f2085e4-baa1-4240-a858-865bf7b9179c/bucket/1c390b0e-4ba1-43c2-ac3d-35734b53e876.jpg"
+                  alt="Ольга в детстве"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span className="text-xs tracking-widest uppercase text-[#8a7560]">Ольга</span>
+            </div>
+          </div>
+        </div>
+
         <p
           className="text-[#6b5e50] text-base leading-relaxed max-w-lg mx-auto opacity-0 animate-fade-up"
           style={{ animationDelay: "0.7s" }}
