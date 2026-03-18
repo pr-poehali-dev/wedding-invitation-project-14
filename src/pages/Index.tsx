@@ -142,7 +142,7 @@ export default function Index() {
           className="text-[#6b5e50] text-base leading-relaxed max-w-lg mx-auto opacity-0 animate-fade-up"
           style={{ animationDelay: "0.7s" }}
         >
-          Мы рады сообщить, что наступает день нашей свадьбы! Приглашаем вас разделить с нами радость этого незабываемого дня.
+          Дорогие гости!<br />С большой радостью сообщаем, что скоро состоится день нашей свадьбы.<br />Будем счастливы разделить этот особенный день вместе с вами
         </p>
         <div
           className="mt-16 opacity-0 animate-fade-up"
@@ -175,8 +175,8 @@ export default function Index() {
             <p className="text-xs tracking-[0.3em] uppercase text-[#8a7560] mb-3">01 — Церемония</p>
             <h2 className="font-display text-4xl md:text-5xl font-light mb-8 text-[#2c2825]">Роспись</h2>
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <InfoBlock icon="Clock" label="Время" value="30 апреля 2026, 13:40" sub="Просим подойти заранее" />
-              <InfoBlock icon="MapPin" label="Место" value="ЗАГС №1" sub="Комсомольская ул., 4" />
+              <InfoBlock icon="Clock" label="Время" value="30 апреля 2026, 13:40" sub="Просим прийти за 10–15 минут" />
+              <InfoBlock icon="MapPin" label="Место" value="ЗАГС №1" sub="Комсомольская ул., 4 — вход с торца здания" />
             </div>
             <div className="w-full overflow-hidden" style={{ maxHeight: "420px" }}>
               <img
@@ -206,7 +206,7 @@ export default function Index() {
             <h2 className="font-display text-4xl md:text-5xl font-light mb-4 text-[#2c2825]">Праздник в Семёнково</h2>
             <p className="text-[#8a7560] font-display italic text-lg mb-8">Архитектурно-этнографический музей Вологодской области</p>
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <InfoBlock icon="Clock" label="Начало" value="14:30" sub="Длительность ~1.5 часа, до 16:00" />
+              <InfoBlock icon="Clock" label="Начало" value="14:30" sub="Не опаздывать! Длительность ~1.5 часа, до 16:00" />
               <InfoBlock icon="MapPin" label="Адрес" value="А-119, 12-й километр" sub="Вологодский муниципальный округ" />
             </div>
             <div className="bg-[#f2ede6] p-6">
@@ -214,7 +214,7 @@ export default function Index() {
               <ul className="space-y-2 text-[#6b5e50]">
                 <li className="flex items-center gap-3"><span className="w-1 h-1 bg-[#8a7560] rounded-full flex-shrink-0" />Небольшой фуршет: закуски, салаты</li>
                 <li className="flex items-center gap-3"><span className="w-1 h-1 bg-[#8a7560] rounded-full flex-shrink-0" />Безалкогольные напитки</li>
-                <li className="flex items-center gap-3"><span className="w-1 h-1 bg-[#8a7560] rounded-full flex-shrink-0" />Прогулка по территории музея</li>
+                <li className="flex items-center gap-3"><span className="w-1 h-1 bg-[#8a7560] rounded-full flex-shrink-0" />Программа от организаторов</li>
               </ul>
             </div>
           </div>
@@ -271,12 +271,12 @@ export default function Index() {
           <NoteCard
             icon="Heart"
             title="«Горько!»"
-            text="Просим воздержаться от криков «Горько» — поцелуй не может быть по заказу, это знак искренних чувств."
+            text="Просим воздержаться от криков «Горько» — поцелуй не может быть по заказу."
           />
           <NoteCard
-            icon="Wine"
-            title="Алкоголь"
-            text="Формат второго дня — безалкогольный. Если хотите взять с собой — сообщите нам заранее."
+            icon="Gift"
+            title="Подарки"
+            text="Ваше присутствие — уже подарок для нас. Но если хотите дополнительно сделать нам приятное, мы будем благодарны за финансовую поддержку наших мечт (у нас их много))"
           />
         </div>
       </section>
