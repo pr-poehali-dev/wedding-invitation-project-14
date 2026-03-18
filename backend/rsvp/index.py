@@ -28,8 +28,8 @@ def handler(event: dict, context) -> dict:
             with conn.cursor() as cur:
                 cur.execute(
                     """
-                    INSERT INTO rsvp_responses (name, day1, day2, plus1, car, car_capacity, message)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                    INSERT INTO rsvp_responses (name, day1, day2, plus1, car, car_capacity, can_give_lift, message)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                     RETURNING id
                     """,
                     (
@@ -39,6 +39,7 @@ def handler(event: dict, context) -> dict:
                         body.get("plus1"),
                         body.get("car"),
                         body.get("carCapacity"),
+                        body.get("canGiveLift"),
                         body.get("message"),
                     ),
                 )

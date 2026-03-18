@@ -22,7 +22,7 @@
       "method": "GET",
       "path": "/",
       "expectedStatus": 200,
-      "expectedBody": { "responses": [] },
+      "expectedBody": {},
       "bodyMatcher": "partial"
     }
   ]

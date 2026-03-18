@@ -3,6 +3,44 @@ import Icon from "@/components/ui/icon";
 
 const RSVP_URL = "https://functions.poehali.dev/8c54b7f9-4384-4349-ac1f-fa4e826c3ed5";
 
+const EMAILJS_SERVICE_ID = "service_svadba";
+const EMAILJS_TEMPLATE_ID = "template_b84pex2";
+const EMAILJS_PUBLIC_KEY = "OdcVZi2Al7_7Leu2Q";
+
+const sendEmailNotification = async (data: {
+  name: string;
+  day1: string;
+  day2: string;
+  plus1: string;
+  car: string;
+  carCapacity: string;
+  canGiveLift: string;
+  message: string;
+}) => {
+  const fmt = (val: string, yes = "Да", no = "Нет") =>
+    val === "yes" ? yes : val === "no" ? no : val || "—";
+
+  await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      service_id: EMAILJS_SERVICE_ID,
+      template_id: EMAILJS_TEMPLATE_ID,
+      user_id: EMAILJS_PUBLIC_KEY,
+      template_params: {
+        guest_name: data.name,
+        day1: fmt(data.day1, "Будет", "Не будет"),
+        day2: fmt(data.day2, "Будет", "Не будет"),
+        plus1: fmt(data.plus1),
+        car: fmt(data.car),
+        car_capacity: data.carCapacity || "—",
+        can_give_lift: fmt(data.canGiveLift),
+        message: data.message || "—",
+      },
+    }),
+  });
+};
+
 const SECTIONS = [
   { id: "ceremony", label: "Церемония" },
   { id: "celebration", label: "Праздник" },
@@ -37,6 +75,7 @@ export default function Index() {
         body: JSON.stringify(rsvp),
       });
       if (!res.ok) throw new Error("Ошибка отправки");
+      await sendEmailNotification(rsvp);
       setSubmitted(true);
     } catch {
       setError("Не удалось отправить. Попробуйте ещё раз.");
