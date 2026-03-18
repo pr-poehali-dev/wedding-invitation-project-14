@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "POST — сохранить ответ гостя",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Тест Гостев",
+        "day1": "yes",
+        "day2": "no",
+        "plus1": "yes",
+        "car": "yes",
+        "carCapacity": "2",
+        "message": "Тестовое сообщение"
+      },
+      "expectedStatus": 201,
+      "expectedBody": { "ok": true },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "GET — получить список ответов",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": { "responses": [] },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

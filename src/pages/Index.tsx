@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
+const RSVP_URL = "https://functions.poehali.dev/8c54b7f9-4384-4349-ac1f-fa4e826c3ed5";
+
 const SECTIONS = [
   { id: "ceremony", label: "Церемония" },
   { id: "celebration", label: "Праздник" },
@@ -20,10 +22,26 @@ export default function Index() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch(RSVP_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(rsvp),
+      });
+      if (!res.ok) throw new Error("Ошибка отправки");
+      setSubmitted(true);
+    } catch {
+      setError("Не удалось отправить. Попробуйте ещё раз.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const scrollTo = (id: string) => {
@@ -318,11 +336,15 @@ export default function Index() {
               />
             </div>
 
+            {error && (
+              <p className="text-red-600 text-sm text-center">{error}</p>
+            )}
             <button
               type="submit"
-              className="w-full bg-[#2c2825] text-[#faf8f5] py-4 text-xs tracking-widest uppercase hover:bg-[#8a7560] transition-colors"
+              disabled={loading}
+              className="w-full bg-[#2c2825] text-[#faf8f5] py-4 text-xs tracking-widest uppercase hover:bg-[#8a7560] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Подтвердить присутствие
+              {loading ? "Отправляем..." : "Подтвердить присутствие"}
             </button>
           </form>
         )}
