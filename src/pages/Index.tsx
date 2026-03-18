@@ -366,12 +366,14 @@ export default function Index() {
             </div>
 
             {/* Can give lift */}
-            <ChoiceField
-              label="Сможете ли кого-нибудь подвезти до локаций 1 и 2 дня?"
-              value={rsvp.canGiveLift}
-              options={[{ val: "yes", label: "Да" }, { val: "no", label: "Нет" }]}
-              onChange={(v) => setRsvp({ ...rsvp, canGiveLift: v })}
-            />
+            {rsvp.car === "yes" && (
+              <ChoiceField
+                label="Сможете ли кого-нибудь подвезти до локаций 1 и 2 дня?"
+                value={rsvp.canGiveLift}
+                options={[{ val: "yes", label: "Да" }, { val: "no", label: "Нет" }]}
+                onChange={(v) => setRsvp({ ...rsvp, canGiveLift: v })}
+              />
+            )}
 
             {/* Message */}
             <div>
