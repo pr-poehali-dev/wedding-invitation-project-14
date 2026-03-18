@@ -1,0 +1,1 @@
+ALTER TABLE rsvp_responses ADD COLUMN IF NOT EXISTS can_give_lift text NULL;
