@@ -174,9 +174,17 @@ export default function Index() {
           <div className="flex-1">
             <p className="text-xs tracking-[0.3em] uppercase text-[#8a7560] mb-3">01 — Церемония</p>
             <h2 className="font-display text-4xl md:text-5xl font-light mb-8 text-[#2c2825]">Роспись</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
               <InfoBlock icon="Clock" label="Время" value="30 апреля 2026, 13:40" sub="Просим подойти заранее" />
               <InfoBlock icon="MapPin" label="Место" value="ЗАГС №1" sub="Комсомольская ул., 4" />
+            </div>
+            <div className="w-full overflow-hidden" style={{ maxHeight: "420px" }}>
+              <img
+                src="https://cdn.poehali.dev/projects/7f2085e4-baa1-4240-a858-865bf7b9179c/bucket/04b443aa-570d-4e25-bdef-63895062c08c.jpg"
+                alt="Дмитрий и Ольга"
+                className="w-full h-full object-cover object-center"
+                style={{ maxHeight: "420px" }}
+              />
             </div>
           </div>
         </div>
